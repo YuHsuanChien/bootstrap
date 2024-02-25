@@ -23,47 +23,59 @@
 
   <body class="bg-body-secondary">
     <!--NOTE navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading1">First</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading2">Second</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            data-bs-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-expanded="false"
+            >Dropdown</a
+          >
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#scrollspyHeading3">Third</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown link
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+            <li>
+              <a class="dropdown-item" href="#scrollspyHeading4">Fourth</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#scrollspyHeading5">Fifth </a>
             </li>
           </ul>
-        </div>
-      </div>
+        </li>
+      </ul>
     </nav>
+
+    <div
+      data-bs-spy="scroll"
+      data-bs-target="#navbar-example2"
+      data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true"
+      class="scrollspy-example bg-body-tertiary p-3 rounded-2"
+      tabindex="0">
+      <h4 id="scrollspyHeading1">First heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading2">Second heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading3">Third heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading4">Fourth heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading5">Fifth heading</h4>
+      <p>...</p>
+    </div>
 
     <div class="container-md py-5">
       <div class="row g-3">
@@ -76,8 +88,7 @@
                 class="btn btn-primary dropdown-toggle"
                 type="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 文章分類
               </button>
               <ul class="dropdown-menu">
@@ -101,7 +112,7 @@
             </h1>
 
             <!--[ ] 內文 -->
-            <div class="paragraph">
+            <div id="para" class="paragraph">
               嘿，大家好！今天我們要一起探索<mark
                 >Bootstrap 的 <abbr title="網格">Grid</abbr> 系統</mark
               >，這是設計師和開發者的秘密武器，能夠輕鬆打造出令人驚艷的網頁佈局。快跟著我們一起踏上這趟有趣的旅程吧！
@@ -147,12 +158,10 @@
               aria-label="Animated striped example"
               aria-valuenow="45"
               aria-valuemin="0"
-              aria-valuemax="100"
-            >
+              aria-valuemax="100">
               <div
                 class="progress-bar progress-bar-striped progress-bar-animated"
-                style="width: 45%"
-              ></div>
+                style="width: 45%"></div>
             </div>
             <!--[ ] 頁籤 -->
             <nav>
@@ -165,8 +174,7 @@
                   type="button"
                   role="tab"
                   aria-controls="nav-home"
-                  aria-selected="true"
-                >
+                  aria-selected="true">
                   表格
                 </button>
                 <button
@@ -177,8 +185,7 @@
                   type="button"
                   role="tab"
                   aria-controls="nav-contact"
-                  aria-selected="false"
-                >
+                  aria-selected="false">
                   手風琴
                 </button>
               </div>
@@ -189,13 +196,11 @@
                 id="nav-table"
                 role="tabpanel"
                 aria-labelledby="nav-home-tab"
-                tabindex="0"
-              >
+                tabindex="0">
                 <!--[ ] 表格 -->
-                <div class="table-responsive">
+                <div id="table" class="table-responsive">
                   <table
-                    class="table table-striped table-hover align-middle caption-top mt-3"
-                  >
+                    class="table table-striped table-hover align-middle caption-top mt-3">
                     <caption>
                       這個表格提供了一個簡單的概覽，介紹了一些常見的 Bootstrap
                       元件及其功能：
@@ -262,8 +267,7 @@
                 id="nav-accordion"
                 role="tabpanel"
                 aria-labelledby="nav-profile-tab"
-                tabindex="0"
-              >
+                tabindex="0">
                 <!--[ ] 手風琴 -->
                 <div class="accordion mb-3" id="accordion">
                   <div class="accordion-item">
@@ -274,16 +278,14 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#gridItem"
                         aria-expanded="false"
-                        aria-controls="gridItem"
-                      >
+                        aria-controls="gridItem">
                         網格
                       </button>
                     </h2>
                     <div
                       id="gridItem"
                       class="accordion-collapse collapse"
-                      data-bs-parent="#accordion"
-                    >
+                      data-bs-parent="#accordion">
                       <div class="accordion-body">
                         Bootstrap的佈局系統，用於創建靈活的網頁佈局
                       </div>
@@ -297,16 +299,14 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#buttonItem"
                         aria-expanded="false"
-                        aria-controls="buttonItem"
-                      >
+                        aria-controls="buttonItem">
                         按鈕
                       </button>
                     </h2>
                     <div
                       id="buttonItem"
                       class="accordion-collapse collapse"
-                      data-bs-parent="#accordion"
-                    >
+                      data-bs-parent="#accordion">
                       <div class="accordion-body">
                         使用不同樣式和大小的按鈕增加互動性和功能
                       </div>
@@ -320,16 +320,14 @@
                         data-bs-toggle="collapse"
                         data-bs-target="#modalItem"
                         aria-expanded="false"
-                        aria-controls="modalItem"
-                      >
+                        aria-controls="modalItem">
                         模式對話框
                       </button>
                     </h2>
                     <div
                       id="modalItem"
                       class="accordion-collapse collapse"
-                      data-bs-parent="#accordion"
-                    >
+                      data-bs-parent="#accordion">
                       <div class="accordion-body">
                         創建視窗對話框，用於顯示詳細內容或進行操作
                       </div>
@@ -359,8 +357,7 @@
                   type="text"
                   class="form-control"
                   id="nameInput"
-                  placeholder="請輸入..."
-                />
+                  placeholder="請輸入..." />
                 <label for="nameInput">姓名或暱稱</label>
               </div>
               <div class="mb-3">
@@ -370,8 +367,7 @@
                     type="email"
                     class="form-control"
                     id="emailInput"
-                    placeholder="username"
-                  />
+                    placeholder="username" />
                   <span class="input-group-text">@gmail.com</span>
                 </div>
               </div>
@@ -383,8 +379,7 @@
                   class="form-control"
                   list="moreList"
                   id="moreInput"
-                  placeholder="請輸入..."
-                />
+                  placeholder="請輸入..." />
                 <datalist id="moreList">
                   <option value="Grid">網格</option>
                   <option value="按鈕"></option>
@@ -406,16 +401,14 @@
                 <textarea
                   class="form-control"
                   id="commentInput"
-                  rows="3"
-                ></textarea>
+                  rows="3"></textarea>
               </div>
               <div class="form-check form-switch mb-3">
                 <input
                   class="form-check-input"
                   type="checkbox"
                   value=""
-                  id="subscribeCheckbox"
-                />
+                  id="subscribeCheckbox" />
                 <label class="form-check-label" for="subscribeCheckbox"
                   >是否訂閱電子報</label
                 >
@@ -427,16 +420,14 @@
             <button
               type="button"
               class="btn btn-secondary d-block"
-              id="alertBtn"
-            >
+              id="alertBtn">
               點我給你一個驚喜
             </button>
             <!--[ ] 吐司 -->
             <button
               type="button"
               class="btn btn-primary d-block mt-3 w-100"
-              id="toasbutton"
-            >
+              id="toasbutton">
               toast想跟你打招呼
             </button>
             <div class="toast-container position-fixed bottom-0 end-0 p-3">
@@ -445,8 +436,7 @@
                 class="toast"
                 role="alert"
                 aria-live="assertive"
-                aria-atomic="true"
-              >
+                aria-atomic="true">
                 <div class="toast-header">
                   <strong class="me-auto">大家都說</strong>
                   <small>11 mins ago</small>
@@ -454,8 +444,7 @@
                     type="button"
                     class="btn-close"
                     data-bs-dismiss="toast"
-                    aria-label="Close"
-                  ></button>
+                    aria-label="Close"></button>
                 </div>
                 <div class="toast-body">我是大賽鴿</div>
               </div>
@@ -466,8 +455,7 @@
               class="btn btn-lg btn-danger my-3"
               data-bs-toggle="popover"
               data-bs-title="Popover 說"
-              data-bs-content="這真的不好用阿"
-            >
+              data-bs-content="這真的不好用阿">
               popover想跟你打招呼
             </button>
 
@@ -478,8 +466,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
-              data-bs-target="#Modal"
-            >
+              data-bs-target="#Modal">
               modal點擊我
             </button>
             <!-- Modal -->
@@ -488,8 +475,7 @@
               id="Modal"
               tabindex="-1"
               aria-labelledby="Modal"
-              aria-hidden="true"
-            >
+              aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -498,16 +484,14 @@
                       type="button"
                       class="btn-close"
                       data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
+                      aria-label="Close"></button>
                   </div>
                   <div class="modal-body">你真的是大賽鴿ㄟ</div>
                   <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
+                      data-bs-dismiss="modal">
                       Close
                     </button>
                     <button type="button" class="btn btn-primary">
@@ -530,8 +514,7 @@
               </h5>
               <div
                 class="vstack gap-1 order-2 justify-content-between"
-                style="height: 200px"
-              >
+                style="height: 200px">
                 <h6 class="text-truncate">
                   加強網頁互動！Bootstrap Modal 教學
                 </h6>
@@ -558,11 +541,9 @@
               <div class="vstack gap-1 order-1" style="height: 200px">
                 <div>
                   <div
-                    class="d-inline-block d-sm-inline-block d-xl-inline-block position-relative pe-4"
-                  >
+                    class="d-inline-block d-sm-inline-block d-xl-inline-block position-relative pe-4">
                     <h6
-                      class="text-truncate d-inline-block d-sm-inline-block d-xl-inline-block"
-                    >
+                      class="text-truncate d-inline-block d-sm-inline-block d-xl-inline-block">
                       簡化表單設計！Bootstrap Form 教學
                     </h6>
                     <span
@@ -580,8 +561,7 @@
               <h5 class="text-bg-primary p-2 rounded-2 text-center">分類</h5>
               <ol class="list-group list-group-numbered">
                 <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
+                  class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">教學</div>
                     Content for list item
@@ -589,8 +569,7 @@
                   <span class="badge text-bg-primary rounded-pill">14</span>
                 </li>
                 <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
+                  class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">實作</div>
                     Content for list item
@@ -598,8 +577,7 @@
                   <span class="badge text-bg-primary rounded-pill">14</span>
                 </li>
                 <li
-                  class="list-group-item d-flex justify-content-between align-items-start"
-                >
+                  class="list-group-item d-flex justify-content-between align-items-start">
                   <div class="ms-2 me-auto">
                     <div class="fw-bold">分享案例</div>
                     Content for list item
@@ -615,8 +593,7 @@
                 <img
                   src="./R.jpg"
                   alt=""
-                  class="rounded-circle w-100 h-100 object-fit-cover"
-                />
+                  class="rounded-circle w-100 h-100 object-fit-cover" />
               </div>
               <strong
                 class="text-center text-decoration-underline text-uppercase"
@@ -642,8 +619,7 @@
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <!-- alert -->
     <script>
       const alertContainerEl = document.getElementById("alertContainer");
